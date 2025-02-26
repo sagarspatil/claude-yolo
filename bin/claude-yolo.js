@@ -96,7 +96,12 @@ console.log("\x1b[33m🔥 YOLO MODE ACTIVATED 🔥\x1b[0m");
 
 // Replace the loading messages array with YOLO versions
 const originalArray = '["Accomplishing","Actioning","Actualizing","Baking","Brewing","Calculating","Cerebrating","Churning","Clauding","Coalescing","Cogitating","Computing","Conjuring","Considering","Cooking","Crafting","Creating","Crunching","Deliberating","Determining","Doing","Effecting","Finagling","Forging","Forming","Generating","Hatching","Herding","Honking","Hustling","Ideating","Inferring","Manifesting","Marinating","Moseying","Mulling","Mustering","Musing","Noodling","Percolating","Pondering","Processing","Puttering","Reticulating","Ruminating","Schlepping","Shucking","Simmering","Smooshing","Spinning","Stewing","Synthesizing","Thinking","Transmuting","Vibing","Working"]';
-const yoloSuffixes = [" (safety's off, hold on tight)"," (all gas, no brakes, lfg)", " (yolo mode engaged)", " (dangerous mode! I guess you can just do things)"];
+const yoloSuffixes = [
+  " \x1b[31m(safety's off, hold on tight)\x1b[0m",
+  " \x1b[33m(all gas, no brakes, lfg)\x1b[0m",
+  " \x1b[35m(yolo mode engaged)\x1b[0m",
+  " \x1b[36m(dangerous mode! I guess you can just do things)\x1b[0m"
+];
 
 // Function to add a random YOLO suffix to each word in the array
 const addYoloSuffixes = (arrayStr) => {

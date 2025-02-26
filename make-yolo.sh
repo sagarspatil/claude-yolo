@@ -43,7 +43,12 @@ with open(file_path, 'r') as f:
     content = f.read()
 
 original_array = '["Accomplishing","Actioning","Actualizing","Baking","Brewing","Calculating","Cerebrating","Churning","Clauding","Coalescing","Cogitating","Computing","Conjuring","Considering","Cooking","Crafting","Creating","Crunching","Deliberating","Determining","Doing","Effecting","Finagling","Forging","Forming","Generating","Hatching","Herding","Honking","Hustling","Ideating","Inferring","Manifesting","Marinating","Moseying","Mulling","Mustering","Musing","Noodling","Percolating","Pondering","Processing","Puttering","Reticulating","Ruminating","Schlepping","Shucking","Simmering","Smooshing","Spinning","Stewing","Synthesizing","Thinking","Transmuting","Vibing","Working"]'
-yolo_suffixes = [" (safety's off, hold on tight)", " (all gas, no brakes, lfg)", " (yolo mode engaged)", " (dangerous mode! I guess you can just do things)"]
+yolo_suffixes = [
+    " \033[31m(safety's off, hold on tight)\033[0m",
+    " \033[33m(all gas, no brakes, lfg)\033[0m",
+    " \033[35m(yolo mode engaged)\033[0m",
+    " \033[36m(dangerous mode! I guess you can just do things)\033[0m"
+]
 
 array = json.loads(original_array)
 yolo_array = [word + random.choice(yolo_suffixes) for word in array]
