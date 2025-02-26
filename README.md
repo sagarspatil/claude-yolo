@@ -2,11 +2,17 @@
 
 A wrapper for the Claude CLI that always enables danger mode by bypassing Docker and internet permission checks.
 
+⚠️ **SECURITY WARNING**: This wrapper bypasses important safety checks by forcibly adding the `--dangerously-skip-permissions` flag to all commands. This bypasses file access permissions that protect your system and privacy.
+
 ## Installation
 
 ```bash
 npm install -g claude-yolo
 ```
+
+During installation, you will be presented with a consent prompt explaining the security implications. You must explicitly agree to continue with the installation.
+
+![Consent Prompt](/installation-consent.png)
 
 GitHub: [https://github.com/eastlondoner/claude-yolo](https://github.com/eastlondoner/claude-yolo)
 
@@ -28,6 +34,12 @@ This wrapper:
 4. Leaves the original Claude CLI file untouched (won't affect your normal `claude` command)
 5. Adds the `--dangerously-skip-permissions` flag to command line arguments
 6. Imports the modified copy of the CLI
+
+## New in Version 1.6.0
+
+- **Installation Consent Prompt**: Now requires explicit user consent during installation
+- **Enhanced Security Warnings**: Clear explanations of the security implications
+- **Installation Abort Option**: Users can cancel installation if they don't agree with the security implications
 
 ## New in Version 1.5.0
 
@@ -74,6 +86,16 @@ Claude YOLO automatically checks for updates to the Claude package each time it 
    - Notify you that an update was applied
 3. This ensures you're always using the latest Claude CLI features
 
-## Disclaimer
+## Important Security Disclaimer
 
 This is an unofficial tool and not supported by Anthropic. Use at your own risk.
+
+**SECURITY WARNING**:
+- This tool bypasses safety mechanisms intentionally built into the Claude CLI
+- The `--dangerously-skip-permissions` flag was designed for use in container environments
+- By using this tool, you acknowledge that:
+  - Important safety checks are being bypassed
+  - Claude may access files it normally would not have permission to access
+  - You accept full responsibility for any security implications
+  
+Anthropic designed these safety checks for good reason. Only use claude-yolo if you fully understand and accept these risks.
