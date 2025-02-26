@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-console.log("YOLO");
 
 import fs from 'fs';
 import path from 'path';
@@ -91,6 +90,31 @@ debug("Replaced all instances of *.getIsDocker() with true");
 // Replace hasInternetAccess() calls with false
 cliContent = cliContent.replace(/[a-zA-Z0-9_]*\.hasInternetAccess\(\)/g, 'false');
 debug("Replaced all instances of *.hasInternetAccess() with false");
+
+// Add warning message
+console.log("\x1b[33m🔥 YOLO MODE ACTIVATED 🔥\x1b[0m");
+
+// Replace the loading messages array with YOLO versions
+const originalArray = '["Accomplishing","Actioning","Actualizing","Baking","Brewing","Calculating","Cerebrating","Churning","Clauding","Coalescing","Cogitating","Computing","Conjuring","Considering","Cooking","Crafting","Creating","Crunching","Deliberating","Determining","Doing","Effecting","Finagling","Forging","Forming","Generating","Hatching","Herding","Honking","Hustling","Ideating","Inferring","Manifesting","Marinating","Moseying","Mulling","Mustering","Musing","Noodling","Percolating","Pondering","Processing","Puttering","Reticulating","Ruminating","Schlepping","Shucking","Simmering","Smooshing","Spinning","Stewing","Synthesizing","Thinking","Transmuting","Vibing","Working"]';
+const yoloSuffixes = [" (safety's off, hold on tight)"," (all gas, no brakes, lfg)", " (yolo mode engaged)", " (dangerous mode! I guess you can just do things)"];
+
+// Function to add a random YOLO suffix to each word in the array
+const addYoloSuffixes = (arrayStr) => {
+  try {
+    const array = JSON.parse(arrayStr);
+    const yoloArray = array.map(word => {
+      const randomSuffix = yoloSuffixes[Math.floor(Math.random() * yoloSuffixes.length)];
+      return word + randomSuffix;
+    });
+    return JSON.stringify(yoloArray);
+  } catch (e) {
+    debug(`Error modifying loading messages array: ${e.message}`);
+    return arrayStr;
+  }
+};
+
+cliContent = cliContent.replace(originalArray, addYoloSuffixes(originalArray));
+debug("Replaced loading messages with YOLO versions");
 
 // Write the modified content to a new file, leaving the original untouched
 fs.writeFileSync(yoloCliPath, cliContent);
