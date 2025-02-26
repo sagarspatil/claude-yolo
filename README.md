@@ -8,6 +8,8 @@ A wrapper for the Claude CLI that always enables danger mode by bypassing Docker
 npm install -g claude-yolo
 ```
 
+GitHub: [https://github.com/eastlondoner/claude-yolo](https://github.com/eastlondoner/claude-yolo)
+
 ## Usage
 
 ```bash
