@@ -1,0 +1,12 @@
+{
+  "name": "claude-yolo",
+  "version": "1.4.0",
+  "description": "YOLO wrapper for Claude CLI with danger mode always enabled and auto-updates",
+  "bin": {
+    "claude-yolo": "./bin/claude-yolo.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-code": "0.2.14"
+  },
+  "type": "module"
+}
