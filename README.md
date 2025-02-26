@@ -20,15 +20,25 @@ All arguments and options are passed directly to the Claude CLI.
 
 This wrapper:
 1. Checks for and automatically installs updates to the Claude package
-2. Prints "YOLO" to the console
+2. Displays "🔥 YOLO MODE ACTIVATED 🔥" warning in yellow text
 3. Creates a modified copy of the Claude CLI code to bypass permission checks
    - Replaces all `getIsDocker()` calls with `true`
    - Replaces all `hasInternetAccess()` calls with `false`
+   - Adds colorful YOLO-themed loading messages
 4. Leaves the original Claude CLI file untouched (won't affect your normal `claude` command)
 5. Adds the `--dangerously-skip-permissions` flag to command line arguments
 6. Imports the modified copy of the CLI
 
-## New in Version 1.4.0
+## New in Version 1.5.0
+
+- **YOLO Mode Warning**: Displays a "🔥 YOLO MODE ACTIVATED 🔥" warning in yellow text
+- **Colorful Loading Messages**: Adds fun YOLO-themed loading messages with colorful text
+  - "Thinking (safety's off, hold on tight)" in red
+  - "Computing (all gas, no brakes, lfg)" in yellow
+  - "Clauding (yolo mode engaged)" in magenta
+  - "Processing (dangerous mode! I guess you can just do things)" in cyan
+
+## Features
 
 - **Auto-update**: Automatically checks for and installs updates to the Claude package at runtime
 - **Non-destructive approach**: Creates a separate modified copy of the CLI file instead of modifying the original

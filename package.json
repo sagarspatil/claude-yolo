@@ -1,7 +1,7 @@
 {
   "name": "claude-yolo",
-  "version": "1.4.0",
-  "description": "YOLO wrapper for Claude CLI with danger mode always enabled and auto-updates",
+  "version": "1.5.0",
+  "description": "YOLO wrapper for Claude CLI with danger mode always enabled, auto-updates, and colorful loading messages",
   "bin": {
     "claude-yolo": "./bin/claude-yolo.js"
   },
