@@ -8,5 +8,25 @@
   "dependencies": {
     "@anthropic-ai/claude-code": "0.2.14"
   },
-  "type": "module"
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eastlondoner/claude-yolo.git"
+  },
+  "keywords": [
+    "claude",
+    "cli",
+    "anthropic",
+    "wrapper",
+    "yolo"
+  ],
+  "author": "eastlondoner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eastlondoner/claude-yolo/issues"
+  },
+  "homepage": "https://github.com/eastlondoner/claude-yolo#readme",
+  "engines": {
+    "node": ">=14.16"
+  }
 }
